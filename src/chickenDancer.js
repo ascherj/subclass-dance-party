@@ -1,5 +1,5 @@
-var makeChickenDancer = function(top, left, timeBetweenSteps) {
-  makeDancer.call(this, top, left, timeBetweenSteps);
+var ChickenDancer = function(top, left, timeBetweenSteps) {
+  Dancer.call(this, top, left, timeBetweenSteps);
   this.$node.addClass('chicken');
 
   $('<img src="./lib/chicken-1.gif" draggable="true" />')
@@ -17,9 +17,10 @@ var makeChickenDancer = function(top, left, timeBetweenSteps) {
     .appendTo(this.$node);
 };
 
-makeChickenDancer.prototype = Object.create(makeDancer.prototype);
-makeChickenDancer.prototype.constructor = makeChickenDancer;
+ChickenDancer.prototype = Object.create(Dancer.prototype);
+ChickenDancer.prototype.constructor = ChickenDancer;
 
-makeChickenDancer.prototype.step = function() {
+ChickenDancer.prototype.step = function() {
+  Dancer.prototype.step.call(this);
   this.$node.toggleClass('chicken');
 };
