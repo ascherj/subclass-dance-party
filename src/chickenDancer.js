@@ -15,21 +15,11 @@ var makeChickenDancer = function(top, left, timeBetweenSteps) {
       $(this).attr('src', './lib/chicken-3.gif');
     })
     .appendTo(this.$node);
-
-  this.zoom(this.$node);
 };
 
 makeChickenDancer.prototype = Object.create(makeDancer.prototype);
 makeChickenDancer.prototype.constructor = makeChickenDancer;
 
-makeChickenDancer.prototype.zoom = function(node) {
-  node.toggleClass('chicken');
-  setTimeout(function() {
-    makeChickenDancer.prototype.zoom(node);
-  }, 1000);
-};
-
-// should be on dancer ?
-makeChickenDancer.prototype.lineUp = function(x) {
-  this.setPosition('50%', x);
+makeChickenDancer.prototype.step = function() {
+  this.$node.toggleClass('chicken');
 };
