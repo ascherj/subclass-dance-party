@@ -3,7 +3,7 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#444;
+  background-image: url('lib/discoball.jpg');
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
