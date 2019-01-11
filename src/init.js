@@ -35,5 +35,13 @@ $(document).ready(function() {
       dancer.lineUp(i * 100);
     });
   });
+
+  $('.changeBackgroundButton').on('click', function(event) {
+    var r = Math.floor(Math.random() * 255);
+    var g = Math.floor(Math.random() * 255);
+    var b = Math.floor(Math.random() * 255);
+
+    $('body').css('background-color', 'rgb(' + r + ',' + g + ',' + b + ')');
+  });
 });
 
